@@ -30,7 +30,7 @@ ORG_IMAGE_SIZE = 3000
 
 
 # set target image
-target_image = "/home/cggm1/data/semicol/DATASET_TRAIN/01_MANUAL/DS_M_1/ukk_case_04/image/ukk_case_04 [d=2.16945,x=91117,y=78100,w=6508,h=6509].png"
+target_image = "./target_image.png"
 target_image = cv2.imread(target_image)
 
 #initailize stain normalizers
