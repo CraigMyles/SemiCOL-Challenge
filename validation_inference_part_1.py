@@ -387,7 +387,8 @@ if __name__ == "__main__":
     parser.add_argument("--input", default="/data2/semicol/DATASET_VAL/01_MANUAL", help="Path to input folder")
     parser.add_argument("--output", default="/data2/semicol/DATASET_VAL_OUTPUT/01_MANUAL", help="Path to output folder")
     parser.add_argument('--architecture', '-a', metavar='ARCH', type=str, help='Architecture. i.e U-Net, Vision Transformer, CrossFormer, DeepLab v3', default='unet', choices=['unet','vit', 'crossformer', 'deeplabv3', 'deeplabv3_from_scratch', 'unet3plus', 'unet_3plus_deepsup'])
-    parser.add_argument("--model_path", default="/home/cggm1/Documents/GitHub/semicol_dev/checkpoints/256x256/xq0d3jf5_checkpoint_epoch18.pth", help="Path to trained model")
+    # parser.add_argument("--model_path", default="/home/cggm1/Documents/GitHub/semicol_dev/checkpoints/256x256/xq0d3jf5_checkpoint_epoch18.pth", help="Path to trained model")
+    parser.add_argument("--model_path", default="/app/SemiCOL-Challenge/trained_models/g4jx4n9k/checkpoint_epoch37.pth", help="Path to trained model")
     # mode, stitch_patches_with_overlap or stitch_patches_with_adaptive_overlap, default is stitch_patches_with_overlap
     parser.add_argument("--mode", default="overlap", help="Mode to stitch patches. Choose between 'overlap' and 'adaptive_overlap'.")
     parser.add_argument("--overlap", type=int, default=128, help="Overlap between patches.")
@@ -396,5 +397,5 @@ if __name__ == "__main__":
     parser.add_argument('--normalise', default=False, type=lambda s: s.lower() == 'true', help='Normalise images (mean & std.), [true or false]')
 
     args = parser.parse_args()
-
+    print("COMMENCING SEGMENTATION FOR SEMICOL CHALLENGE TASK 1")
     process_files(args.input, args.output, args.architecture, args.model_path, args.mode, args.batch_size, args.overlap, args.num_classes, args.normalise)

@@ -84,7 +84,7 @@ def main(args):
     normalize = T.Normalize(mean=mean, std=std)
 
     # set target image
-    target_image = "./SemiCOL-Challenge/target_image.png"
+    target_image = "./target_image.png"
     target_image = cv2.imread(target_image)
 
     #initailize stain normalizers
