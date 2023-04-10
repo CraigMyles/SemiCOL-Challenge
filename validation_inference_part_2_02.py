@@ -45,5 +45,5 @@ for index, row in data.iterrows():
         result[filename] = 0.0
 
 # Save the dictionary as a JSON file
-with open('./predict/classification.json', 'w') as outfile:
+with open('/predict/classification.json', 'w') as outfile:
     json.dump(result, outfile, indent=4)
